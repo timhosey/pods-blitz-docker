@@ -1,0 +1,11 @@
+services:
+  web:
+    build:
+      context: app
+      target: builder
+    ports: 
+      - '3002:3002'
+    volumes:
+      - /disks/storage/apps/pods-blitz/config:/config
+    env:
+      - PODS_BLITZ_CONFIG_FILE=/config/config.toml
